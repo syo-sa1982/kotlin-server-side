@@ -13,7 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
 import org.springframework.test.web.reactive.server.WebTestClient
 
 @WebFluxTest
-class ItemControllerTests(@Autowired private val webTestClient: WebTestClient) {
+class ItemControllerTests(@Autowired private val webTesClient: WebTestClient) {
 
     @MockkBean lateinit var mockItemRepository: ItemRepository
 
@@ -46,7 +46,7 @@ class ItemControllerTests(@Autowired private val webTestClient: WebTestClient) {
                 ]
                 """.trimIndent()
 
-            webTestClient.get().uri(getListUri).exchange()
+            webTesClient.get().uri(getListUri).exchange()
                     .expectStatus().isOk
                     .expectBody().json(expectResponse)
             verify { mockItemRepository.findAll() }
