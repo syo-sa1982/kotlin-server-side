@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.router
 
-@Configuration
+//@Configuration
 class ApiRouter(private val itemHandler: ItemHandler) {
-    @Bean
+//    @Bean
     fun itemRouter() = router {
         ("/items" and accept(MediaType.APPLICATION_JSON)).nest{
             GET("/", itemHandler::getList)

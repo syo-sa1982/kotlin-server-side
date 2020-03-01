@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.server.body
 import org.springframework.web.reactive.function.server.bodyToMono
 import reactor.core.publisher.Mono
 
-@Component
+//@Component
 class ItemHandler(private val itemRepository: ItemRepository, private val service: ItemService) {
     fun getList(request: ServerRequest): Mono<ServerResponse> = ServerResponse
             .ok()
